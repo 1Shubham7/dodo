@@ -1,7 +1,7 @@
 # dodo 🦤
 
 **dodo** is a job-hunting agent that lives in your repo. Open this repository in
-**Claude Code**, **Codex**, or **Cursor** and the agent is already there — no install,
+**Claude Code**, **Codex**, or **Cursor** and the agent is already there - no install,
 no server, no accounts. It builds your resumes in LaTeX, tailors them to job
 descriptions, answers application forms in your voice, and gets smarter about you with
 every application you feed it.
@@ -10,19 +10,19 @@ every application you feed it.
 
 1. **Builds your resumes.** Give dodo an old resume (or just tell it about yourself),
    tell it which roles you're targeting, and it creates one tailored LaTeX resume per
-   role in `resume/` — same facts, different emphasis for each role.
+   role in `resume/` - same facts, different emphasis for each role.
 
 2. **Learns from your applications.** Share the applications you've filled before, as
    many as you can. dodo stores each one in its own folder (e.g. your CERN application
    goes to `applications/cern/`) and mines them for facts and stories about you.
 
-3. **Answers new application forms.** Ask dodo to answer a question or a whole form —
+3. **Answers new application forms.** Ask dodo to answer a question or a whole form -
    it drafts answers from everything it knows about you, reusing your own past answers
    where they fit. Once you confirm the answers look good, it stores them for next time.
 
 4. **Adapts your resume to a JD.** Paste a job description and dodo recommends which
-   base resume fits best, then (if you want) adapts it to the JD — mirroring the JD's
-   keywords, leading with the most relevant experience, cutting the rest — and saves it
+   base resume fits best, then (if you want) adapts it to the JD - mirroring the JD's
+   keywords, leading with the most relevant experience, cutting the rest - and saves it
    in that company's folder.
 
 5. **Never lies.** dodo rephrases, reorders, and emphasizes what's true about you. It
@@ -45,7 +45,7 @@ dodo will ask whether you have a resume or want one created, and take it from th
 Everything dodo learns about you lives in this repo as plain files, so you own it, you
 can read it, and you can version it with git.
 
-> **Note:** if you push this repo anywhere, keep it **private** — it will contain your
+> **Note:** if you push this repo anywhere, keep it **private** - it will contain your
 > resume, contact details, and application answers. dodo will not push or commit your
 > private files on its own; it always asks first.
 
@@ -137,7 +137,7 @@ AGENTS.md             # The agent definition (read by Codex & Cursor)
 CLAUDE.md             # Entry point for Claude Code (imports AGENTS.md)
 .cursor/rules/        # Entry point for older Cursor versions
 templates/resume.tex  # Standard ATS-friendly LaTeX resume template
-profile/              # Master profile — everything dodo knows about you
+profile/              # Master profile - everything dodo knows about you
 resume/               # One LaTeX resume per target role
 applications/         # One folder per company
   <company>/
@@ -159,14 +159,14 @@ compiles there.
 
 ## How it works
 
-There's no code here — dodo is a set of instructions in [`AGENTS.md`](AGENTS.md) that
+There's no code here - dodo is a set of instructions in [`AGENTS.md`](AGENTS.md) that
 coding agents pick up automatically:
 
 - **Codex** and **Cursor** read `AGENTS.md` natively.
 - **Claude Code** reads `CLAUDE.md`, which imports `AGENTS.md`.
 - Older Cursor versions pick it up via `.cursor/rules/dodo.mdc`.
 
-Want to change how dodo behaves? Edit `AGENTS.md` — it's just markdown.
+Want to change how dodo behaves? Edit `AGENTS.md` - it's just markdown.
 
 ## License
 
