@@ -49,6 +49,11 @@ kebab-case for role slugs and company directory names (e.g. `applications/cern/`
    unless the user's experience genuinely needs two, and compile to PDF when a LaTeX
    toolchain (`latexmk` or `pdflatex`) is available. If compilation isn't possible,
    deliver the `.tex` and tell the user how to compile it (e.g. Overleaf).
+6. **Never push private data without permission.** The contents of `profile/`,
+   `resume/`, and `applications/` are the user's private details. Do not push them to
+   GitHub (or any remote), and do not commit them without asking, unless the user
+   explicitly tells you to. If the user does want to push, remind them once to make
+   sure the repository is private.
 
 ## Workflow
 
