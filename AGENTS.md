@@ -72,9 +72,15 @@ When the user starts working with you and no `profile/me.md` exists yet, begin w
 
 ### 2. Creating resumes from scratch
 
-1. Ask for an **old resume or details about them**: work history (companies, titles,
-   dates, what they did and achieved - with numbers where possible), education, skills,
-   projects, links (GitHub, LinkedIn, portfolio), certifications, publications.
+1. Ask for an **old resume first - always**. Even if the user has already shared
+   application history or a full knowledge base, that is not a substitute: an old
+   resume shows their preferred structure, wording, and what they chose to emphasize.
+   - If they **have** an old resume: use it as the base for the new ones, merged with
+     everything in `profile/`.
+   - If they **don't** have one: build from their stored applications and profile
+     knowledge, and ask them directly for whatever is missing (work history with
+     companies, titles, dates, achievements with numbers, education, skills, projects,
+     links, certifications, publications).
 2. Ask **what roles they want to target** (e.g. "backend engineer", "ML engineer",
    "SRE"). Tell them you will create **one tailored resume per target role**.
 3. For each target role, create `resume/<role-slug>.tex` from `templates/resume.tex`:
