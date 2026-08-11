@@ -1,0 +1,13 @@
+# LaTeX build artifacts (keep .tex and .pdf, drop the noise)
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.toc
+*.bbl
+*.blg
+
+# Claude Code local settings
+.claude/settings.local.json

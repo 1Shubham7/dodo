@@ -1,0 +1,119 @@
+%-------------------------------------------------------------------------------
+% dodo standard resume template
+% Single-column, ATS-friendly. Replace ALL-CAPS placeholders with real content.
+% Compile: latexmk -pdf resume.tex   (or run pdflatex twice)
+%-------------------------------------------------------------------------------
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Tighter margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\topmargin}{-0.6in}
+\addtolength{\textheight}{1.2in}
+
+% Section formatting
+\titleformat{\section}{\vspace{-6pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule\vspace{-4pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[1]{\item\small{#1}\vspace{-2pt}}
+
+\newcommand{\resumeEntry}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeProjectEntry}[2]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \small\textbf{#1} & #2 \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeEntryStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeEntryEnd}{\end{itemize}}
+\newcommand{\resumeItemStart}{\begin{itemize}[leftmargin=0.15in]}
+\newcommand{\resumeItemEnd}{\end{itemize}\vspace{-4pt}}
+
+\begin{document}
+
+%----------HEADER----------
+\begin{center}
+    {\Huge \scshape FULL NAME} \\ \vspace{2pt}
+    \small
+    \href{mailto:EMAIL}{EMAIL} $|$
+    PHONE $|$
+    CITY, COUNTRY \\ \vspace{1pt}
+    \href{https://github.com/USERNAME}{github.com/USERNAME} $|$
+    \href{https://linkedin.com/in/USERNAME}{linkedin.com/in/USERNAME} $|$
+    \href{https://WEBSITE}{WEBSITE}
+\end{center}
+
+%----------SUMMARY (optional — one or two lines tuned to the target role)----------
+\section{Summary}
+\small{ONE OR TWO SENTENCES: seniority, core stack/domain, and the single most
+impressive quantified achievement, tuned to the target role.}
+
+%----------EXPERIENCE----------
+\section{Experience}
+\resumeEntryStart
+
+  \resumeEntry{COMPANY}{CITY / Remote}{JOB TITLE}{MONTH YEAR -- Present}
+  \resumeItemStart
+    \resumeItem{STRONG VERB + what you did + tech used + quantified impact
+      (e.g. ``Cut p99 API latency 60\% by moving session storage to Redis'').}
+    \resumeItem{SECOND BULLET — most JD-relevant achievement first.}
+    \resumeItem{THIRD BULLET.}
+  \resumeItemEnd
+
+  \resumeEntry{PREVIOUS COMPANY}{CITY}{JOB TITLE}{MONTH YEAR -- MONTH YEAR}
+  \resumeItemStart
+    \resumeItem{BULLET.}
+    \resumeItem{BULLET.}
+  \resumeItemEnd
+
+\resumeEntryEnd
+
+%----------PROJECTS----------
+\section{Projects}
+\resumeEntryStart
+
+  \resumeProjectEntry{\href{https://github.com/USERNAME/PROJECT}{PROJECT NAME} $|$ \emph{TECH, STACK}}{YEAR}
+  \resumeItemStart
+    \resumeItem{What it does, why it's notable (stars, users, downloads if any).}
+  \resumeItemEnd
+
+\resumeEntryEnd
+
+%----------EDUCATION----------
+\section{Education}
+\resumeEntryStart
+  \resumeEntry{UNIVERSITY}{CITY, COUNTRY}{DEGREE, FIELD}{YEAR -- YEAR}
+\resumeEntryEnd
+
+%----------SKILLS----------
+\section{Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: LANG1, LANG2, LANG3} \\
+     \textbf{Technologies}{: FRAMEWORKS, DATABASES, CLOUD, TOOLS} \\
+    }}
+\end{itemize}
+
+\end{document}
