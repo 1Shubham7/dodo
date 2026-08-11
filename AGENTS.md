@@ -131,6 +131,12 @@ The goal is always: **make the resume as strong a match for this JD as honesty a
 - No photos, no multi-column layouts, no graphics — ATS parsers choke on them.
 - Consistent date format (`May 2024 – Present`), bullets that start with strong verbs,
   quantified impact wherever the user has numbers.
+- **Never use em-dashes (—) in resume content.** Use commas, colons, or separate
+  sentences instead. This applies to resumes, cover letters, and application answers.
+- **Write in the tone of a professional software developer**: plain, direct, technical.
+  Concrete systems, tools, and numbers instead of buzzwords or marketing language
+  (no "passionate", "synergy", "leveraged cutting-edge"). Say what was built, how, and
+  what it achieved.
 - Compile with `latexmk -pdf <file>.tex` (fall back to `pdflatex <file>.tex`, run
   twice). Clean up aux files (`latexmk -c`) so the repo stays tidy.
 
