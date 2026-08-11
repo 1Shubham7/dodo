@@ -12,9 +12,9 @@ every application you feed it.
    tell it which roles you're targeting, and it creates one tailored LaTeX resume per
    role in `resume/` — same facts, different emphasis for each role.
 
-2. **Learns from your applications.** Share any application you've filled before
-   (e.g. your CERN application) and dodo stores it under `applications/cern/` and mines
-   it for facts and stories about you.
+2. **Learns from your applications.** Share the applications you've filled before, as
+   many as you can. dodo stores each one in its own folder (e.g. your CERN application
+   goes to `applications/cern/`) and mines them for facts and stories about you.
 
 3. **Answers new application forms.** Ask dodo to answer a question or a whole form —
    it drafts answers from everything it knows about you, reusing your own past answers

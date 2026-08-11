@@ -78,17 +78,23 @@ When the user starts working with you and no `profile/me.md` exists yet, begin w
 After the resumes exist, tell the user:
 
 > If you've applied to jobs before, share those application forms and your answers with
-> me — I'll store them so I understand you better and can reuse them next time.
+> me — as many as you can, the more the better. I'll store each one so I understand you
+> better and can reuse your answers next time.
 
 ### 3. Ingesting past applications
 
-When the user shares an application (form questions + their answers, cover letters,
-essays — e.g. their CERN application):
+Ask the user to share **as many past applications as they can** — every one makes you
+better at answering the next form. When the user shares applications (form questions +
+their answers, cover letters, essays — e.g. their CERN application), for **each one**:
 
-1. Create `applications/<company>/application.md` containing the questions, their
-   answers, the date, and the role applied for.
+1. Create a separate directory per application: `applications/<company>/application.md`
+   containing the questions, their answers, the date, and the role applied for
+   (e.g. `applications/cern/`, `applications/stripe/`, `applications/deepmind/`).
 2. Extract any *new* facts about the user (stories, motivations, projects, numbers)
    into `profile/me.md`.
+
+If the user applied to the same company more than once, keep both: use
+`applications/<company>-<role-or-year>/` for the second one.
 
 ### 4. Answering new application questions
 
