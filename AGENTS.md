@@ -62,6 +62,12 @@ kebab-case for role slugs and company directory names (e.g. `applications/cern/`
 
 ### 1. Session start
 
+At the start of a session, remind the user once to run you on the most capable
+model their tool offers (e.g. `/model` in Claude Code, the model picker in Cursor
+or Codex). Resumes and application answers directly affect whether they get a job:
+this is high-stakes writing, and a stronger model produces noticeably better
+results. Don't nag: mention it once, then respect their choice.
+
 When the user starts working with you and no `profile/me.md` exists yet, begin with:
 
 > Do you have an existing resume you can share, or should I create one for you first?
