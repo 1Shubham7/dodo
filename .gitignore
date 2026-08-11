@@ -11,3 +11,12 @@
 
 # Claude Code local settings
 .claude/settings.local.json
+
+# Private data: everything dodo learns about you stays local, never pushed.
+# The folders are kept (via .gitkeep) so the structure exists in fresh clones.
+profile/*
+!profile/.gitkeep
+resume/*
+!resume/.gitkeep
+applications/*
+!applications/.gitkeep

@@ -45,9 +45,12 @@ dodo will ask whether you have a resume or want one created, and take it from th
 Everything dodo learns about you lives in this repo as plain files, so you own it, you
 can read it, and you can version it with git.
 
-> **Note:** if you push this repo anywhere, keep it **private** - it will contain your
-> resume, contact details, and application answers. dodo will not push or commit your
-> private files on its own; it always asks first.
+> **Privacy:** your data is never pushed to GitHub. The `profile/`, `resume/`, and
+> `applications/` folders are gitignored (only the empty folder structure is tracked),
+> so everything dodo learns about you - your resume, contact details, and application
+> answers - stays on your machine. On top of that, dodo will never commit or push your
+> private files on its own; it always asks first. If you do want to version your data,
+> remove those entries from `.gitignore` and keep your fork **private**.
 
 ## How to use the agent
 

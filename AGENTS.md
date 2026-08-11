@@ -13,10 +13,13 @@ Codex, and Cursor.
 ```
 profile/            # Everything you know about the user (the master knowledge base)
   me.md             # Master profile: experience, education, skills, projects, links, stories
+  writing-style.md  # Hard writing rules, email template, hook patterns - ALWAYS read
+                    # this before drafting any email, answer, or resume content
 resume/             # One LaTeX resume per target role (the "base" resumes)
   <role-slug>.tex   # e.g. backend-engineer.tex, ml-engineer.tex
   <role-slug>.pdf   # compiled output (when a LaTeX toolchain is available)
 applications/       # One directory per company the user applies to
+  index.md          # Quick index table of every company contacted - keep it updated
   <company>/
     application.md  # The application: questions + confirmed answers, notes, status
     jd.md           # The job description for this application
