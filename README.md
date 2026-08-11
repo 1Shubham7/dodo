@@ -46,7 +46,89 @@ Everything dodo learns about you lives in this repo as plain files, so you own i
 can read it, and you can version it with git.
 
 > **Note:** if you push this repo anywhere, keep it **private** — it will contain your
-> resume, contact details, and application answers.
+> resume, contact details, and application answers. dodo will not push or commit your
+> private files on its own; it always asks first.
+
+## How to use the agent
+
+dodo works with whatever you give it. Here is what to provide, where, and how.
+
+### 1. Your existing resume (if you have one)
+
+Give dodo your current or old resume in any of these ways:
+
+- **Drop the file into the repo** (root or anywhere, any format: PDF, `.tex`, `.docx`,
+  `.md`, `.txt`) and say: "my resume is in resume.pdf, use it"
+- **Paste the text** straight into the chat
+- If it is on Overleaf, download the `.tex` or PDF first and drop it in
+
+dodo reads it, extracts everything into `profile/me.md` (its master knowledge base
+about you), and works from there. You can delete the original file afterwards if you
+want; the extracted profile is what dodo uses.
+
+### 2. No resume yet? Tell dodo about yourself
+
+Say "create a resume for me" and dodo will interview you. Have this ready:
+
+- **Work history**: companies, titles, dates, what you built and achieved. Numbers
+  help a lot (users, latency, revenue, team size).
+- **Education**: degree, university, years.
+- **Skills**: languages, frameworks, databases, cloud, tools.
+- **Projects**: what they do, tech used, links, stars/users if any.
+- **Links**: GitHub, LinkedIn, portfolio, email, phone, city.
+
+You do not need it all polished; brain-dump in the chat and dodo will structure it.
+
+### 3. Target roles
+
+Tell dodo which roles you are hunting for, for example:
+
+> I want to target backend engineer and platform engineer roles
+
+It creates one LaTeX resume per role in `resume/` (e.g. `resume/backend-engineer.tex`),
+each emphasizing the parts of your background that matter for that role.
+
+### 4. Past applications (the more, the better)
+
+Share applications you have already submitted anywhere: the form questions plus your
+answers, cover letters, "why do you want to work here" essays. Paste them in the chat
+or drop the files in the repo and point dodo at them:
+
+> here's my old CERN application, learn from it
+
+Each one is stored in its own folder (`applications/cern/application.md`) and mined
+for facts and stories about you. This is how dodo learns to answer in your voice.
+
+### 5. New applications
+
+When you are applying somewhere, give dodo two things:
+
+1. **The job description.** Always. Paste it or drop it as a file. dodo saves it to
+   `applications/<company>/jd.md`.
+2. **The form questions** (if you want answers drafted). dodo drafts answers from your
+   profile and past applications, you review them, and once you say they look good it
+   stores them in `applications/<company>/application.md` for future reuse.
+
+For the resume, dodo will recommend which base resume from `resume/` fits the JD best.
+Say "adapt it" and it tailors the resume to that JD and saves it as
+`applications/<company>/resume.tex`.
+
+### Example session
+
+```text
+you:  help me with my job hunt
+dodo: do you have an existing resume, or should I create one for you first?
+you:  here's my old one (drops old-resume.pdf in the repo)
+dodo: (builds profile/me.md) what roles do you want to target?
+you:  backend engineer and SRE
+dodo: (creates resume/backend-engineer.tex and resume/sre.tex)
+you:  I'm applying to Stripe, here's the JD: ...
+dodo: your backend resume fits best. want me to adapt it to this JD?
+you:  yes, and answer these 3 form questions too: ...
+dodo: (writes applications/stripe/jd.md, resume.tex, drafts answers)
+you:  answers look good
+dodo: (stores them in applications/stripe/application.md)
+```
 
 ## Repository layout
 
