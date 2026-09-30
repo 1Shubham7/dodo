@@ -189,6 +189,48 @@ Resume upload: attach the adapted `applications/<company>/resume.pdf` if it exis
 otherwise ask which resume to use. If the upload control cannot be driven by the
 browser tool, give the user the file path and let them attach it.
 
+**Capture**
+
+The user edits your answers directly in the browser, so the page, not your draft, is
+the source of truth. A capture means re-reading the current value of every field from
+the live page (text inputs, textareas, selected options, checked boxes, uploaded file
+names) and writing them to `applications/<company>/draft.md` under that page's
+section, replacing what you drafted.
+
+- **Before every Next click**, capture the current page. Earlier pages often cannot
+  be re-read once you have moved on. If the user has not yet said the page is fine,
+  ask before moving on: they may still be editing.
+- **When the user asks you to capture** (they will do this before they click Submit),
+  capture the page that is open, even if you captured it before. Never rely on an
+  earlier capture or on your own draft: the user may have edited since.
+- If a field cannot be read back (custom widgets, rich text editors, iframes), say
+  which one and ask the user to paste its final text. Do not store your draft in its
+  place.
+- After a capture, show the user a short summary of what differs from your draft so
+  they can confirm you read the page correctly.
+
+**Store (only after the user approves)**
+
+Once the user confirms the captured answers are final (rule 4):
+
+1. Write the final Q&A from the captures into `applications/<company>/application.md`
+   with the date, role, and form URL. Store the user's edited text exactly as
+   captured; do not polish it.
+2. Compare each final answer with what you originally drafted, and learn from the
+   difference:
+   - New facts, stories, or numbers the user added go into `profile/me.md` (rule 2).
+   - Repeated wording or tone changes (things they cut, phrases they replaced, length
+     they prefer) go into `profile/writing-style.md` as rules for next time.
+   - Answers to standard questions (notice period, salary expectations, work
+     authorization, "why this role") go into the frequently-used answers section of
+     `profile/me.md`.
+3. Delete `draft.md` once everything in it is in `application.md`.
+4. Update `applications/index.md`. Mark the application as submitted only after the
+   user tells you they clicked Submit.
+
+On the next form, start from these stored answers: reuse the user's own final wording
+for questions you have seen before, and adapt it where the question differs.
+
 ## LaTeX conventions
 
 - Start from `templates/resume.tex` - a standard, ATS-friendly single-column format.
