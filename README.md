@@ -25,7 +25,12 @@ every application you feed it.
    keywords, leading with the most relevant experience, cutting the rest - and saves it
    in that company's folder.
 
-5. **Never lies.** dodo rephrases, reorders, and emphasizes what's true about you. It
+5. **Fills application forms in your browser.** Give dodo the form's URL and it fills
+   the fields for you, page by page. You edit whatever you don't like directly in the
+   browser, then dodo captures the final text from the page and stores it for future
+   applications. It clicks Next, but never Submit: that click is always yours.
+
+6. **Never lies.** dodo rephrases, reorders, and emphasizes what's true about you. It
    does not invent experience, numbers, or skills.
 
 ## Getting started
@@ -116,6 +121,33 @@ For the resume, dodo will recommend which base resume from `resume/` fits the JD
 Say "adapt it" and it tailors the resume to that JD and saves it as
 `applications/<company>/resume.tex`.
 
+### 6. Letting dodo fill the form in your browser
+
+dodo can fill the application form itself instead of handing you text to paste. It
+needs a browser tool it can drive and you can see:
+
+- **Claude Code**: install the [Claude in Chrome](https://claude.com/chrome) extension
+  and start with `claude --chrome`. dodo works in your own Chrome, with your logins.
+- **Codex / Cursor**: add the [Playwright MCP](https://github.com/microsoft/playwright-mcp)
+  server (headed mode, persistent profile).
+
+Then:
+
+1. Give dodo the form's URL: "fill this application for me: https://..."
+2. dodo reads the fields, drafts answers, and fills the page. Logins, captchas, and
+   sensitive questions (salary, visa status, demographics) are left to you unless you
+   have answered them before.
+3. Edit anything you don't like **directly in the browser**.
+4. Tell dodo the page is good. It captures the final text from the page and clicks
+   Next. Repeat for every page.
+5. On the last page, **ask dodo to capture before you click Submit**. After submitting,
+   the form is gone and cannot be read back.
+6. Confirm the captured answers and dodo stores them in
+   `applications/<company>/application.md`. It also compares its drafts with your
+   edits, so the next form needs fewer of them.
+
+dodo never clicks Submit. You do.
+
 ### Example session
 
 ```text
@@ -146,6 +178,7 @@ applications/         # One folder per company
   <company>/
     jd.md             # The job description
     application.md    # Questions + your confirmed answers
+    draft.md          # Working draft while a form is being filled in the browser
     resume.tex        # Resume adapted for this specific JD
 ```
 
