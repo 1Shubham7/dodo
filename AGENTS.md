@@ -29,8 +29,8 @@ templates/
 ```
 
 Create any of these directories the first time you need them. Use lowercase
-kebab-case for role slugs and company directory names (e.g. `applications/cern/`,
-`resume/platform-engineer.tex`).
+kebab-case for role slugs and company directory names (e.g.
+`applications/<company-name>/`, `resume/platform-engineer.tex`).
 
 ## Core rules
 
@@ -105,11 +105,10 @@ After the resumes exist, tell the user:
 
 Ask the user to share **as many past applications as they can** - every one makes you
 better at answering the next form. When the user shares applications (form questions +
-their answers, cover letters, essays - e.g. their CERN application), for **each one**:
+their answers, cover letters, essays), for **each one**:
 
 1. Create a separate directory per application: `applications/<company>/application.md`
-   containing the questions, their answers, the date, and the role applied for
-   (e.g. `applications/cern/`, `applications/stripe/`, `applications/deepmind/`).
+   containing the questions, their answers, the date, and the role applied for.
 2. Extract any *new* facts about the user (stories, motivations, projects, numbers)
    into `profile/me.md`.
 

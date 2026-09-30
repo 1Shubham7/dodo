@@ -13,8 +13,8 @@ every application you feed it.
    role in `resume/` - same facts, different emphasis for each role.
 
 2. **Learns from your applications.** Share the applications you've filled before, as
-   many as you can. dodo stores each one in its own folder (e.g. your CERN application
-   goes to `applications/cern/`) and mines them for facts and stories about you.
+   many as you can. dodo stores each one in its own folder
+   (`applications/<company>/`) and mines them for facts and stories about you.
 
 3. **Answers new application forms.** Ask dodo to answer a question or a whole form -
    it drafts answers from everything it knows about you, reusing your own past answers
@@ -97,9 +97,9 @@ Share applications you have already submitted anywhere: the form questions plus 
 answers, cover letters, "why do you want to work here" essays. Paste them in the chat
 or drop the files in the repo and point dodo at them:
 
-> here's my old CERN application, learn from it
+> here's an old application of mine, learn from it
 
-Each one is stored in its own folder (`applications/cern/application.md`) and mined
+Each one is stored in its own folder (`applications/<company>/application.md`) and mined
 for facts and stories about you. This is how dodo learns to answer in your voice.
 
 ### 5. New applications
@@ -125,12 +125,12 @@ you:  here's my old one (drops old-resume.pdf in the repo)
 dodo: (builds profile/me.md) what roles do you want to target?
 you:  backend engineer and SRE
 dodo: (creates resume/backend-engineer.tex and resume/sre.tex)
-you:  I'm applying to Stripe, here's the JD: ...
+you:  I'm applying for a backend role, here's the JD: ...
 dodo: your backend resume fits best. want me to adapt it to this JD?
 you:  yes, and answer these 3 form questions too: ...
-dodo: (writes applications/stripe/jd.md, resume.tex, drafts answers)
+dodo: (writes applications/<company>/jd.md, resume.tex, drafts answers)
 you:  answers look good
-dodo: (stores them in applications/stripe/application.md)
+dodo: (stores them in applications/<company>/application.md)
 ```
 
 ## Repository layout
