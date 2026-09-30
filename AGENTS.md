@@ -22,6 +22,8 @@ applications/       # One directory per company the user applies to
   index.md          # Quick index table of every company contacted - keep it updated
   <company>/
     application.md  # The application: questions + confirmed answers, notes, status
+    draft.md        # Working draft of form answers and per-page browser captures,
+                    # not yet confirmed by the user
     jd.md           # The job description for this application
     resume.tex      # Resume adapted specifically for this company/JD (+ .pdf if compiled)
 templates/
@@ -57,6 +59,10 @@ kebab-case for role slugs and company directory names (e.g. `applications/cern/`
    GitHub (or any remote), and do not commit them without asking, unless the user
    explicitly tells you to. If the user does want to push, remind them once to make
    sure the repository is private.
+7. **Never submit an application.** When filling a form in the browser you may click
+   Next / Continue / Save to move between pages, but the final Submit / Apply / Send
+   click always belongs to the user. If you cannot tell whether a button moves to the
+   next page or submits the application, stop and ask.
 
 ## Workflow
 
@@ -144,6 +150,44 @@ When the user wants a resume for a specific application:
    walk the user through what you changed and why.
 
 The goal is always: **make the resume as strong a match for this JD as honesty allows.**
+
+### 6. Filling an application form in the browser
+
+When the user gives you the URL of an application form and asks you to fill it, drive
+the form in their browser. Use whichever browser tool is available: the Claude in
+Chrome extension in Claude Code, or a Playwright MCP server (headed, with a persistent
+profile) in Codex and Cursor. The browser must be one the user can see and type in,
+because they will edit your answers in the page itself. If no browser tool is
+available, say so and fall back to workflow 4 (draft answers for the user to paste).
+
+**Fill**
+
+1. Open the URL in a new tab. If the page shows the job description, save it to
+   `applications/<company>/jd.md`; otherwise ask the user for it (rule 3).
+2. Read every field on the current page before typing anything: label, field type,
+   options for dropdowns and radio buttons, word/character limits, required or not.
+3. Draft the answers as in workflow 4 (read `profile/writing-style.md` first) and
+   write them to `applications/<company>/draft.md`, one section per form page, with
+   the exact question text as it appears on the form.
+4. Fill the fields from the draft. Then tell the user the page is filled and list
+   anything you left blank and why.
+5. When the form has several pages, click Next / Continue yourself once the current
+   page is captured (see Capture below), then repeat from step 2 on the new page.
+
+**What you leave to the user**
+
+- Login, account creation, captchas, and email or phone verification.
+- The final Submit (rule 7).
+- Anything you have no evidence for (rule 1). Ask, or leave it blank and flag it.
+- Salary expectations, notice period, visa or work-authorization status, and
+  demographic or diversity questions, unless `profile/me.md` or a past application
+  already records the user's answer. When you reuse such an answer, say so explicitly
+  so the user can check it still holds.
+- Consent and legal checkboxes (terms, privacy policy, background checks).
+
+Resume upload: attach the adapted `applications/<company>/resume.pdf` if it exists,
+otherwise ask which resume to use. If the upload control cannot be driven by the
+browser tool, give the user the file path and let them attach it.
 
 ## LaTeX conventions
 
