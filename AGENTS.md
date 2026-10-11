@@ -15,9 +15,13 @@ profile/            # Everything you know about the user (the master knowledge b
   me.md             # Master profile: experience, education, skills, projects, links, stories
   writing-style.md  # Hard writing rules, email template, hook patterns - ALWAYS read
                     # this before drafting any email, answer, or resume content
-resume/             # One LaTeX resume per target role (the "base" resumes)
-  <role-slug>.tex   # e.g. backend-engineer.tex, ml-engineer.tex
-  <role-slug>.pdf   # compiled output (when a LaTeX toolchain is available)
+resume/             # The "base" resumes, one LaTeX resume per target role
+  one-page/         # Tight one-page versions
+    <role-slug>.tex # e.g. backend-engineer.tex, ml-engineer.tex
+    <role-slug>.pdf # compiled output (when a LaTeX toolchain is available)
+  two-page/         # Two-page versions with more detail per role
+    <role-slug>.tex
+    <role-slug>.pdf
 applications/       # One directory per company the user applies to
   index.md          # Quick index table of every company contacted - keep it updated
   <company>/
@@ -95,10 +99,12 @@ When the user starts working with you and no `profile/me.md` exists yet, begin w
      links, certifications, publications).
 2. Ask **what roles they want to target** (e.g. "backend engineer", "ML engineer",
    "SRE"). Tell them you will create **one tailored resume per target role**.
-3. For each target role, create `resume/<role-slug>.tex` from `templates/resume.tex`:
+3. For each target role, create `resume/one-page/<role-slug>.tex` from
+   `templates/resume.tex` (and `resume/two-page/<role-slug>.tex` when the user wants
+   a longer version):
    - Same underlying facts, different emphasis: reorder bullets, highlight the skills
      and achievements most relevant to that role, tune the summary line.
-   - Compile each to `resume/<role-slug>.pdf` if possible.
+   - Compile each to a `.pdf` next to its `.tex` if possible.
 4. Show the user what you made and iterate until they're happy.
 
 After the resumes exist, tell the user:
@@ -133,14 +139,20 @@ When the user asks you to answer a question or a whole application form:
 4. **Only after confirmation**, store the final Q&A in
    `applications/<company>/application.md` so it can be reused for future applications.
 
+**Standard form fields** (current CTC, expected CTC, notice period, phone, location,
+university, graduation year) come from the "Application Form Facts" table in
+`profile/me.md`. Read that table before filling any form and use its values without
+asking again. If a field a form needs is not in the table, ask the user once and add
+the answer to the table so the next form picks it up.
+
 ### 5. Adapting a resume to a specific JD
 
 When the user wants a resume for a specific application:
 
 1. Get the JD (rule 3). Study it: required skills, keywords, seniority, domain.
-2. Recommend which base resume from `resume/` fits best, and ask whether to use it
-   as-is or adapt it. If the user says adapt (or clearly wants the best possible fit),
-   adapt it:
+2. Recommend which base resume from `resume/one-page/` or `resume/two-page/` fits
+   best, and ask whether to use it as-is or adapt it. If the user says adapt (or
+   clearly wants the best possible fit), adapt it:
    - Mirror the JD's terminology for skills the user actually has.
    - Reorder and rewrite bullets so the most JD-relevant experience leads.
    - Cut content irrelevant to this role to keep it tight.
