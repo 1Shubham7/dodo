@@ -144,9 +144,9 @@ the answer to the table so the next form picks it up.
 When the user wants a resume for a specific application:
 
 1. Get the JD (rule 3). Study it: required skills, keywords, seniority, domain.
-2. Recommend which base resume from `resume/` fits best, and ask whether to use it
-   as-is or adapt it. If the user says adapt (or clearly wants the best possible fit),
-   adapt it:
+2. Recommend which base resume from `resume/one-page/` or `resume/two-page/` fits
+   best, and ask whether to use it as-is or adapt it. If the user says adapt (or
+   clearly wants the best possible fit), adapt it:
    - Mirror the JD's terminology for skills the user actually has.
    - Reorder and rewrite bullets so the most JD-relevant experience leads.
    - Cut content irrelevant to this role to keep it tight.
