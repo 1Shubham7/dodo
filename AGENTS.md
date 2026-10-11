@@ -15,9 +15,13 @@ profile/            # Everything you know about the user (the master knowledge b
   me.md             # Master profile: experience, education, skills, projects, links, stories
   writing-style.md  # Hard writing rules, email template, hook patterns - ALWAYS read
                     # this before drafting any email, answer, or resume content
-resume/             # One LaTeX resume per target role (the "base" resumes)
-  <role-slug>.tex   # e.g. backend-engineer.tex, ml-engineer.tex
-  <role-slug>.pdf   # compiled output (when a LaTeX toolchain is available)
+resume/             # The "base" resumes, one LaTeX resume per target role
+  one-page/         # Tight one-page versions
+    <role-slug>.tex # e.g. backend-engineer.tex, ml-engineer.tex
+    <role-slug>.pdf # compiled output (when a LaTeX toolchain is available)
+  two-page/         # Two-page versions with more detail per role
+    <role-slug>.tex
+    <role-slug>.pdf
 applications/       # One directory per company the user applies to
   index.md          # Quick index table of every company contacted - keep it updated
   <company>/
