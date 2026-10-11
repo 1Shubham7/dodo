@@ -93,10 +93,12 @@ When the user starts working with you and no `profile/me.md` exists yet, begin w
      links, certifications, publications).
 2. Ask **what roles they want to target** (e.g. "backend engineer", "ML engineer",
    "SRE"). Tell them you will create **one tailored resume per target role**.
-3. For each target role, create `resume/<role-slug>.tex` from `templates/resume.tex`:
+3. For each target role, create `resume/one-page/<role-slug>.tex` from
+   `templates/resume.tex` (and `resume/two-page/<role-slug>.tex` when the user wants
+   a longer version):
    - Same underlying facts, different emphasis: reorder bullets, highlight the skills
      and achievements most relevant to that role, tune the summary line.
-   - Compile each to `resume/<role-slug>.pdf` if possible.
+   - Compile each to a `.pdf` next to its `.tex` if possible.
 4. Show the user what you made and iterate until they're happy.
 
 After the resumes exist, tell the user:
