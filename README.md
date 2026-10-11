@@ -142,6 +142,8 @@ CLAUDE.md             # Entry point for Claude Code (imports AGENTS.md)
 templates/resume.tex  # Standard ATS-friendly LaTeX resume template
 profile/              # Master profile - everything dodo knows about you
 resume/               # One LaTeX resume per target role
+  one-page/           # Tight one-page versions
+  two-page/           # Longer versions with more detail
 applications/         # One folder per company
   <company>/
     jd.md             # The job description
