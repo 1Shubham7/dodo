@@ -133,6 +133,12 @@ When the user asks you to answer a question or a whole application form:
 4. **Only after confirmation**, store the final Q&A in
    `applications/<company>/application.md` so it can be reused for future applications.
 
+**Standard form fields** (current CTC, expected CTC, notice period, phone, location,
+university, graduation year) come from the "Application Form Facts" table in
+`profile/me.md`. Read that table before filling any form and use its values without
+asking again. If a field a form needs is not in the table, ask the user once and add
+the answer to the table so the next form picks it up.
+
 ### 5. Adapting a resume to a specific JD
 
 When the user wants a resume for a specific application:
